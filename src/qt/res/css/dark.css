@@ -1534,6 +1534,10 @@ QWidget#MasternodeList .QTabWidget QTabBar::tab {
 	padding:2px 10px;
 }
 
+QWidget#tabMyMasternodes, QWidget#tabAllMasternodes {
+	background:#000;
+}
+
 QWidget#MasternodeList .QTabWidget QLabel {
 	color:#fff;
 }
