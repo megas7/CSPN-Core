@@ -395,12 +395,12 @@ void WalletView::toggleLockWallet()
     WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
     
     // Unlock the wallet when requested
-    if (encStatus == walletModel->Locked || encStatus == walletModel->UnlockedForStakingOnly) {
+    if (encStatus == walletModel->Locked) {
         AskPassphraseDialog dlg(AskPassphraseDialog::UnlockStaking, this, walletModel);
         dlg.exec();
     }
     
-    else if (encStatus == walletModel->Unlocked) {
+    else if (encStatus == walletModel->Unlocked || encStatus == walletModel->UnlockedForStakingOnly) {
         walletModel->setWalletLocked(true);
     }
 }
